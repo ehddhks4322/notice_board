@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+}
+
+.container {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-top: 5px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        p1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        th, td, p1 {
+            text-align: center;
+        }
+
+        input[type="file"], input[type="text"], input[type="password"], textarea {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="file"]:hover, input[type="text"]:hover, input[type="password"]:hover, textarea:hover {
+            border: 1px solid #555;
+        }
+
+        input[type="file"], img {
+            margin-top: 10px;
+        }

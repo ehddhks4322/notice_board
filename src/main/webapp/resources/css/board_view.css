@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+
+    .container {
+        background-color: #f4f4f4; /* 배경색 조절 */
+        padding: 20px;
+    }
+
+    .board-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center; /* 게시글을 가운데로 이동 */
+    }
+
+    .board-header {
+        display: flex;
+        justify-content: center; /* 가운데 정렬 */
+        align-items: center;
+        flex-direction: column; /* 세로 정렬로 변경 */
+        margin-bottom: 20px;
+    }
+
+    .board-header h1 {
+        margin: 0;
+        color: #333333; /* 제목 색상 조절 */
+    }
+
+    .board-row {
+        display: flex;
+        justify-content: center; /* 가운데 정렬 */
+        align-items: center;
+        flex-wrap: wrap; /* 작은 화면에 대비해 요소들을 여러 줄로 배치 */
+        margin-bottom: 10px;
+    }
+
+    .board-col label {
+        margin-right: 10px;
+        color: #666666; /* 라벨 색상 조절 */
+    }
+
+    .s_container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .slider {
+        display: flex;
+        justify-content: center; /* 내용을 수평으로 가운데 정렬 */
+    	align-items: center; /* 내용을 수직으로 가운데 정렬 */
+        overflow: hidden;
+    }
+    
+    .slider img {
+    	max-width: 100%; /* 이미지가 컨테이너 너비를 초과하지 않도록 함 */
+	}
+
+    #prevBtn,
+    #nextBtn {
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: #4caf50; /* 버튼 배경색 조절 */
+        color: #ffffff; /* 버튼 텍스트 색상 조절 */
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .board-col[style="width: 500px; height: 200px;"] {
+        width: 100%;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        text-align: center; /* 텍스트를 가운데 정렬로 변경 */
+        word-wrap: break-word; /* 긴 단어가 영역을 넘어갈 경우 자동으로 줄바꿈 */
+    }
+    /* 댓글 스타일 추가 */
+    h3 {
+        color: #333333;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="button"] {
+        background-color: #4caf50;
+        color: #ffffff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .c_container {
+        margin-top: 20px;
+    }
+
+    .c_container div {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .c_container a {
+        color: #4caf50;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+     .boder-com div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px; /* 필요한 경우 조절하세요. */
+        margin-bottom: 10px; /* 필요한 경우 조절하세요. */
+    }
+
+    .c_id,
+    #c_reg {
+        margin: 0; /* 각각의 기본 마진 제거 */
+    }
+    
+   
+    #c_co {
+	    text-align: center; /* 내용을 가운데 정렬 */
+	    margin: auto; /* 기본 마진 제거 */
+	    width: 40%; /* 가로 전체를 차지하도록 설정 */
+	    word-wrap: break-word; /* 긴 단어가 영역을 넘어갈 경우 자동으로 줄바꿈 */
+    }
+ 
+

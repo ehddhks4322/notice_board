@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="m">
+	
+	<!-- 아이디 중복체크 -->
+	<select id="check_id" resultType="int" parameterType="String">
+		select count(*) from member where id = #{id}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="member_insert" parameterType="member">
+		insert into member values(
+			seq_member_idx.nextVal,
+			#{name},
+			#{id},
+			#{pwd},
+			#{email},
+			#{addr}
+			)
+	</insert>
+
+	<!-- 로그인 체크(id를 통한 한건 조회) -->
+	<select id="login_check" resultType="member" parameterType="String">
+		select * from member where id=#{id}
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="result_id" resultType="member" parameterType="java.util.HashMap">
+		select * from member where name=#{name} and email=#{email} 
+	</select>
+	
+	<!-- 비밀번호 찾기를 위한 정보조회 -->
+	<select id="send" resultType="member" parameterType="java.util.HashMap">
+		select * from member where id=#{id} and email=#{email}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="result_pwd" parameterType="member">
+		update member set
+			pwd = #{pwd}
+			where id=#{id}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="secession" parameterType="String">
+		delete from member where id=#{id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="c">
+
+	<!-- 댓글 추가 -->
+	<insert id="c_insert" parameterType="comments">
+		insert into comments values(
+				seq_comments_idx.nextVal,
+				#{b_idx},
+				#{c_id},
+				#{content},
+				sysdate,
+				seq_comments_idx.currVal,
+				0,
+				0
+		)
+	</insert>
+
+	<!-- idx에 해당하는 전체 댓글 조회 -->
+	<select id="c_count" resultType="int" parameterType="int">
+		select count(*) from comments where b_idx=#{idx}
+	</select>
+	
+	<!-- idx에 해당하는 댓글 페이지별로 조회 -->
+	<select id="c_list" resultType="comments" parameterType="java.util.HashMap">
+		select * from (select rank() over(order by ref desc, step) no, c.* from comments c)
+		where b_idx=#{idx} and no between #{c_start} and #{c_end}
+	</select>
+	
+	<!-- 댓글 idx에 해당하는 한건 조회 -->
+	<select id="c_select" resultType="comments" parameterType="int">
+		select * from comments where idx=#{idx}
+	</select>
+	
+	<!-- 댓글 삭제된 것 처럼 업데이트 -->
+	<update id="c_del_update" parameterType="comments">
+		update comments set content=#{content} where idx=#{idx}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
